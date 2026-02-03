@@ -23,7 +23,7 @@
             overflow-x: hidden;
             line-height: 1.6;
             color: #374151;
-            background-color: #fdf2f8; /* Color base suave por si falla el bg animado */
+            background-color: #fdf2f8;
         }
 
         .font-romance { font-family: 'Dancing Script', cursive; }
@@ -134,7 +134,7 @@
             background: rgba(255,255,255,.4);
         }
 
-        /* --- NUEVO: Estilos Galería Polaroid --- */
+        /* --- Estilos Galería Polaroid --- */
         #galeria {
             padding: 4rem 1rem;
             text-align: center;
@@ -152,7 +152,7 @@
 
         .polaroid {
             background: #fff;
-            padding: 1rem 1rem 3.5rem 1rem; /* Espacio extra abajo para el estilo polaroid */
+            padding: 1rem 1rem 3.5rem 1rem;
             box-shadow: 0 6px 15px rgba(0,0,0,0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease, z-index 0.3s;
             width: 280px;
@@ -168,15 +168,13 @@
             border: 1px solid #f0f0f0;
         }
 
-        /* Rotaciones aleatorias para efecto "desordenado" */
         .polaroid:nth-child(odd) { transform: rotate(3deg); }
         .polaroid:nth-child(even) { transform: rotate(-3deg); }
         .polaroid:nth-child(3n) { transform: rotate(2deg); }
         .polaroid:nth-child(5n) { transform: rotate(-2deg); }
 
-        /* Efecto Hover */
         .polaroid:hover {
-            transform: scale(1.1) rotate(0deg) !important; /* Se endereza y crece */
+            transform: scale(1.1) rotate(0deg) !important;
             z-index: 10;
             box-shadow: 0 15px 30px rgba(0,0,0,0.2);
         }
@@ -189,7 +187,6 @@
             font-size: 1.2rem;
             opacity: 0.6;
         }
-        /* -------------------------------------- */
 
         /* botones */
         button {
@@ -307,90 +304,78 @@
     </div>
 </section>
 
-<section id="carta">
-    <div id="contenido-pdf" class="glass-card" data-aos="zoom-in-up">
+<!-- IMPORTANTE: El ID aquí debe abarcar todo lo que quieres en el PDF -->
+<!-- He movido el ID "contenido-pdf-wrapper" para envolver la carta y la galería si quisieras ambas, 
+     pero por ahora mantendré la lógica de descargar solo la carta como antes para asegurar que funcione,
+     o podemos hacer un PDF de todo.
+     
+     Para este caso, voy a crear un contenedor específico para la descarga que incluya la carta.
+-->
+<div id="area-impresion">
+    <section id="carta">
+        <div id="contenido-pdf" class="glass-card" data-aos="zoom-in-up">
 
-        <span style="position:absolute;top:-1rem;left:-1rem;font-size:3rem;">🌸</span>
-        <span style="position:absolute;bottom:-1rem;right:-1rem;font-size:3rem;">✨</span>
+            <span style="position:absolute;top:-1rem;left:-1rem;font-size:3rem;">🌸</span>
+            <span style="position:absolute;bottom:-1rem;right:-1rem;font-size:3rem;">✨</span>
 
-        <div class="inner-card">
-            <h2 class="font-romance" style="text-align:center;color:#7e22ce;margin-bottom:2rem;">
-                Querido amorcito mío:
-            </h2>
+            <div class="inner-card">
+                <h2 class="font-romance" style="text-align:center;color:#7e22ce;margin-bottom:2rem;">
+                    Querido amorcito mío:
+                </h2>
 
-            <div style="display:flex;flex-direction:column;gap:1.5rem;text-align:justify;">
-                <p>
-                    Hoy quiero detener el tiempo un momento para decirte <strong style="color:#9333ea;">gracias</strong>.
-                    Gracias por tu amor, por tu paciencia y por la forma tan bonita en la que eliges quedarte. ❤️
-                </p>
-
-                <p>
-                    Te admiro profundamente: Por tu corazón noble, por tu entrega y por tu manera tan genuina
-                    de transformar la vida de quienes te rodean. ❤️
-                </p>
-
-                <p>
-                    Te regalo este LEGO porque representa lo que hemos estado haciendo: Construyendo el presente. 
-                    Espero te guste este pequeño detalle que te lo doy con todo mi corazón. ❤️
-                </p>
-
-                <p id="phrase-highlight">
-                    Este mensaje es un recordatorio de algo muy simple pero poderoso:
-                    <br>
-                    <span style="background:#ede9fe;padding:.3rem .6rem;border-radius:.4rem; display:inline-block; margin-top:0.5rem;">
-                        Te elijo hoy, mañana y todos los días. ❤️
-                    </span>
-                </p>
-
-                <div style="margin-top:3rem;border-top:1px solid #ddd;padding-top:1.5rem;">
-                    <p class="font-romance" style="text-align:right;font-size:2rem;color:#9333ea;">
-                        Te amo infinitamente, mi amorcito camellón. ❤️
+                <div style="display:flex;flex-direction:column;gap:1.5rem;text-align:justify;">
+                    <p>
+                        Hoy quiero detener el tiempo un momento para decirte <strong style="color:#9333ea;">gracias</strong>.
+                        Gracias por tu amor, por tu paciencia y por la forma tan bonita en la que eliges quedarte. ❤️
                     </p>
-                    <p style="text-align:right;font-size:.8rem;letter-spacing:.15em;">
-                        Con todo mi corazón<br>luis alberto
+
+                    <p>
+                        Te admiro profundamente: Por tu corazón noble, por tu entrega y por tu manera tan genuina
+                        de transformar la vida de quienes te rodean. ❤️
                     </p>
+
+                    <p>
+                        Te regalo este LEGO porque representa lo que hemos estado haciendo: Construyendo el presente. 
+                        Espero te guste este pequeño detalle que te lo doy con todo mi corazón. ❤️
+                    </p>
+
+                    <p id="phrase-highlight">
+                        Este mensaje es un recordatorio de algo muy simple pero poderoso:
+                        <br>
+                        <span style="background:#ede9fe;padding:.3rem .6rem;border-radius:.4rem; display:inline-block; margin-top:0.5rem;">
+                            Te elijo hoy, mañana y todos los días. ❤️
+                        </span>
+                    </p>
+
+                    <div style="margin-top:3rem;border-top:1px solid #ddd;padding-top:1.5rem;">
+                        <p class="font-romance" style="text-align:right;font-size:2rem;color:#9333ea;">
+                            Te amo infinitamente, mi amorcito camellón. ❤️
+                        </p>
+                        <p style="text-align:right;font-size:.8rem;letter-spacing:.15em;">
+                            Con todo mi corazón<br>luis alberto
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- ===== NUEVA SECCIÓN: GALERÍA POLAROID ===== -->
-<section id="galeria" data-aos="fade-up">
-    <h2 class="font-romance" style="color:#9333ea; font-size: 2.5rem; margin-bottom: 0.5rem;">
-        Nuestros Momentos
-    </h2>
-    <p style="opacity: 0.7;">Coleccionando instantes contigo</p>
+    <section id="galeria" data-aos="fade-up">
+        <h2 class="font-romance" style="color:#9333ea; font-size: 2.5rem; margin-bottom: 0.5rem;">
+            Nuestros Momentos
+        </h2>
+        <p style="opacity: 0.7;">Coleccionando instantes contigo</p>
 
-    <div class="gallery-grid">
-        <!-- Foto 1 -->
-        <div class="polaroid">
-            <img src="foto1.jpeg" alt="Foto nuestra 1" loading="lazy">
+        <div class="gallery-grid">
+            <div class="polaroid"> <img src="foto1.jpeg" alt="Foto 1" loading="lazy"> </div>
+            <div class="polaroid"> <img src="foto2.jpeg" alt="Foto 2" loading="lazy"> </div>
+            <div class="polaroid"> <img src="foto3.jpeg" alt="Foto 3" loading="lazy"> </div>
+            <div class="polaroid"> <img src="foto4.jpeg" alt="Foto 4" loading="lazy"> </div>
+            <div class="polaroid"> <img src="foto5.jpeg" alt="Foto 5" loading="lazy"> </div>
+            <div class="polaroid"> <img src="foto6.jpeg" alt="Foto 6" loading="lazy"> </div>
         </div>
-        <!-- Foto 2 -->
-        <div class="polaroid">
-            <img src="foto2.jpeg" alt="Foto nuestra 2" loading="lazy">
-        </div>
-        <!-- Foto 3 -->
-        <div class="polaroid">
-            <!-- RECUERDA: Renombrar en GitHub a foto3.jpeg -->
-            <img src="foto3.jpeg" alt="Foto nuestra 3" loading="lazy">
-        </div>
-        <!-- Foto 4 -->
-        <div class="polaroid">
-            <img src="foto4.jpeg" alt="Foto nuestra 4" loading="lazy">
-        </div>
-        <!-- Foto 5 -->
-        <div class="polaroid">
-            <img src="foto5.jpeg" alt="Foto nuestra 5" loading="lazy">
-        </div>
-        <!-- Foto 6 -->
-        <div class="polaroid">
-            <img src="foto6.jpeg" alt="Foto nuestra 6" loading="lazy">
-        </div>
-    </div>
-</section>
-<!-- =========================================== -->
+    </section>
+</div>
 
 <footer>
     <h4>Este mensaje es eterno 💌</h4>
@@ -426,28 +411,23 @@
 
     setInterval(createHeart, 400);
 
-    /* ===== LÓGICA DEL CONTADOR ===== */
     const fechaInicio = new Date('2025-06-22T00:00:00');
-
     function actualizarContador() {
         const ahora = new Date();
         const diferencia = ahora - fechaInicio;
-
         const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
         const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
         const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
-
         document.getElementById('dias').innerText = dias;
         document.getElementById('horas').innerText = horas;
         document.getElementById('minutos').innerText = minutos;
         document.getElementById('segundos').innerText = segundos;
     }
-
     setInterval(actualizarContador, 1000);
     actualizarContador();
 
-    /* ===== PDF LOGIC ===== */
+    /* ===== PDF LOGIC OPTIMIZADA PARA MÓVIL ===== */
     function descargarPDF() {
         const btn = document.getElementById('btn-descarga');
         const msg = document.getElementById('loading-msg');
@@ -457,9 +437,14 @@
         btn.innerText = 'Procesando...';
         msg.style.display = 'block';
 
-        const original = document.getElementById("contenido-pdf");
+        // Usamos solo la carta para asegurar que funcione en móvil, 
+        // o si prefieres todo, cambia "contenido-pdf" por "area-impresion"
+        // NOTA: Para móvil es más seguro imprimir solo la carta inicialmente para evitar crash por memoria
+        const original = document.getElementById("contenido-pdf"); 
+        
         const clone = original.cloneNode(true);
 
+        // Limpieza de AOS
         clone.removeAttribute('data-aos');
         clone.classList.remove('aos-animate', 'aos-init');
         clone.querySelectorAll('[data-aos]').forEach(child => {
@@ -467,6 +452,14 @@
             child.classList.remove('aos-animate', 'aos-init');
         });
 
+        // FIX MÓVIL CRÍTICO: Quitar loading="lazy" de las imágenes clonadas
+        // Esto evita que el PDF salga en blanco esperando imágenes que no cargan
+        clone.querySelectorAll('img').forEach(img => {
+            img.loading = "eager"; 
+            img.removeAttribute('loading');
+        });
+
+        // Estilos planos para impresión
         clone.style.background = "#ffffff";
         clone.style.boxShadow = "none";
         clone.style.backdropFilter = "none";
@@ -475,8 +468,10 @@
         clone.style.margin = "0";
         clone.style.border = "none"; 
         clone.style.borderRadius = "0";
-        clone.style.padding = "2.5rem"; 
+        clone.style.padding = "2rem"; 
+        clone.style.width = "100%"; // Asegurar ancho completo
 
+        // Ajuste de emojis
         const spans = clone.querySelectorAll('span[style*="position:absolute"]');
         spans.forEach(span => {
             if (span.innerHTML.includes('🌸')) {
@@ -491,7 +486,7 @@
 
         const innerCard = clone.querySelector('.inner-card');
         if(innerCard) {
-            innerCard.style.padding = "2rem"; 
+            innerCard.style.padding = "1.5rem"; 
             innerCard.style.border = "2px solid #d8b4fe";
             innerCard.style.borderRadius = "1rem";
             innerCard.style.backgroundColor = "#fff"; 
@@ -499,15 +494,15 @@
 
         const h2 = clone.querySelector('h2');
         if(h2) {
-            h2.style.fontSize = "2.2rem"; 
+            h2.style.fontSize = "2rem"; 
             h2.style.marginBottom = "1.5rem";
             h2.style.marginTop = "0";
         }
 
         const paragraphs = clone.querySelectorAll('p');
         paragraphs.forEach(p => {
-            p.style.fontSize = "1rem"; 
-            p.style.lineHeight = "1.5";
+            p.style.fontSize = "0.95rem"; 
+            p.style.lineHeight = "1.4";
             p.style.marginBottom = "0.8rem";
             p.style.color = "#1f2937"; 
         });
@@ -523,19 +518,20 @@
             highlightedSpan.style.padding = "0.4rem 1rem";
         }
 
-        const textContainer = clone.querySelector('.inner-card > div');
-        if(textContainer) {
-            textContainer.style.gap = "0.8rem"; 
-        }
-
+        // Wrapper fuera de pantalla
         const wrapper = document.createElement("div");
         wrapper.style.position = "fixed";
         wrapper.style.top = "-9999px"; 
         wrapper.style.left = "0";
+        // Ancho fijo adecuado para PDF A4/Letter
         wrapper.style.width = "750px"; 
         wrapper.style.zIndex = "-100";
         wrapper.appendChild(clone);
         document.body.appendChild(wrapper);
+
+        // Detectar móvil para reducir calidad si es necesario y evitar crash
+        const isMobile = window.innerWidth < 768;
+        const scaleFactor = isMobile ? 1.5 : 2; // Reducimos escala en móvil
 
         setTimeout(() => {
             const opt = {
@@ -543,11 +539,12 @@
                 filename:     'Carta_para_David.pdf',
                 image:        { type: 'jpeg', quality: 0.98 },
                 html2canvas:  { 
-                    scale: 2, 
+                    scale: scaleFactor, // Escala adaptativa
                     useCORS: true, 
                     scrollY: 0,
                     backgroundColor: "#ffffff",
-                    letterRendering: true
+                    letterRendering: true,
+                    allowTaint: true
                 },
                 jsPDF:        { unit: 'cm', format: 'letter', orientation: 'portrait' }
             };
@@ -562,12 +559,15 @@
             })
             .catch(err => {
                 console.error("Error:", err);
-                alert("Error al generar. Intenta de nuevo.");
+                alert("Error al generar PDF. Intenta de nuevo.");
+                // Limpieza en caso de error
+                if(document.body.contains(wrapper)) document.body.removeChild(wrapper);
                 btn.disabled = false;
                 btn.style.opacity = '1';
                 btn.innerText = '⬇ descargar carta en pdf';
+                msg.style.display = 'none';
             });
-        }, 500);
+        }, 1000); // Aumentamos tiempo de espera para asegurar carga de recursos
     }
 </script>
 
